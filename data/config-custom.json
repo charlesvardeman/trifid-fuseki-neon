@@ -1,0 +1,5 @@
+{
+  "baseConfig": "trifid:config-sparql.json",
+  "sparqlEndpointUrl": "http://fuseki-neonscience:3030/ds",
+  "datasetBaseUrl": "http://ld.neonscience.org"
+}

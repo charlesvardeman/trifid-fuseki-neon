@@ -1,17 +1,21 @@
-neon-ld:
-    container_name: neon-ld
-    build: ./trifid
+ld-neonscience:
+    container_name: ld-neonscience
+    build: ./trifid-neon
     ports: 
       - 8080:8080
     links:
-      - fuseki
+      - fuseki-neonscience
     volumes:
-      - ./config-custom.json:/usr/src/app/config-custom.json
+      - ./data/config-custom.json:/app/config.json
     environment:
-      - TRIFID_CONFIG=config-custom.json
+      - TRIFID_CONFIG=/app/config-custom.json
 
-fuseki:
-    container_name: fuseki
-    build: ./fuseki-docker
-    ports:
-      - 3030:3030
+fuseki-neonscience:
+    container_name: fuseki-neonscience
+    build: ./fuseki-geosparql-docker
+    volumes:
+      - ./data/abby_road.rdf:/jena-fuseki/geosparql_test.rdf
+#    ports:
+#      - 3030:3030
+    expose:
+      - "3030"
