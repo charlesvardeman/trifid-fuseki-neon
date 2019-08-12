@@ -1,0 +1,17 @@
+neon-ld:
+    container_name: neon-ld
+    build: ./trifid
+    ports: 
+      - 8080:8080
+    links:
+      - fuseki
+    volumes:
+      - ./config-custom.json:/usr/src/app/config-custom.json
+    environment:
+      - TRIFID_CONFIG=config-custom.json
+
+fuseki:
+    container_name: fuseki
+    build: ./fuseki-docker
+    ports:
+      - 3030:3030
