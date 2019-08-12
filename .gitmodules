@@ -1,0 +1,6 @@
+[submodule "trifid-neon"]
+	path = trifid-neon
+	url = https://github.com/charlesvardeman/trifid-neon.git
+[submodule "fuseki-geosparql-docker"]
+	path = fuseki-geosparql-docker
+	url = https://github.com/charlesvardeman/fuseki-geosparql-docker.git
