@@ -2,7 +2,7 @@ ld-neonscience:
     container_name: ld-neonscience
     build: ./trifid-neon
     ports: 
-      - 8080:8080
+      - 80:8080
     links:
       - fuseki-neonscience
     volumes:
