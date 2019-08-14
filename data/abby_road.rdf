@@ -10,9 +10,6 @@
     <rdf:type rdf:resource="http://schema.org/GeoCoordinates"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://ld.neonscience.org/field-sites/ABBY">
-    <rdf:type rdf:resource="http://schema.org/Place"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://ld.neonscience.org/field-sites/ABBY">
     <rdf:type rdf:resource="http://geoschemas.org/ResearchSite"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://ld.neonscience.org/field-sites/ABBY">
@@ -134,5 +131,8 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ld.neonscience.org/EnvitonmentalZones/ABBYZone1">
     <rdf:comment>May need to define NEON def/EnvironmentalZone</rdf:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geoschemas.org/ResearchSite">
+    <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
   </rdf:Description>
 </rdf:RDF>
