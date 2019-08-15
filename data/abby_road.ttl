@@ -9,7 +9,7 @@
 @prefix plot: <http://linked.data.gov.au/def/plot/> .
 @prefix sosa: <http://www.w3.org/ns/sosa#> .
 @prefix sosa-ext: <http://www.w3.org/ns/ssn/ext#> .
-@prefix ssn: 
+@prefix ssn: <http://www.w3.org/ns/ssn#> .
 @prefix envo: <http://purl.obolibrary.org/obo/> .
 @prefix geolink-info: <http://schema.geolink.org/1.0/pattern/informationobject#> .
 @prefix st: <http://www.opengis.net/spec/iot_sensing/1.0/req/> .

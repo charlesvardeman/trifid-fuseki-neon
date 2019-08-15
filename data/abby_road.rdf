@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF xmlns:envo="http://purl.obolibrary.org/obo/" xmlns:geoschemas="http://geoschemas.org/" xmlns:geosparql="http://www.opengis.net/ont/geosparql#" xmlns:plot="http://linked.data.gov.au/def/plot/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="http://schema.org/" xmlns:sf="http://www.opengis.net/ont/sf#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa="http://www.w3.org/ns/sosa#">
+<rdf:RDF xmlns:envo="http://purl.obolibrary.org/obo/" xmlns:geolink-info="http://schema.geolink.org/1.0/pattern/informationobject#" xmlns:geoschemas="http://geoschemas.org/" xmlns:geosparql="http://www.opengis.net/ont/geosparql#" xmlns:hydra-core="http://www.w3.org/ns/hydra/core#" xmlns:plot="http://linked.data.gov.au/def/plot/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="http://schema.org/" xmlns:sf="http://www.opengis.net/ont/sf#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:sosa-ext="http://www.w3.org/ns/ssn/ext#" xmlns:sosa="http://www.w3.org/ns/sosa#" xmlns:ssn="http://www.w3.org/ns/ssn#" xmlns:st="http://www.opengis.net/spec/iot_sensing/1.0/req/">
   <rdf:Description rdf:nodeID="genid1">
     <schema:latitude>40.75</schema:latitude>
   </rdf:Description>
@@ -119,6 +119,51 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://ld.neonscience.org/plots/ABBY_074">
     <sosa:isSampleOf rdf:resource="http://ld.neonscience.org/EnvitonmentalZones/ABBYZone1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ABBY_01">
+    <rdf:type rdf:resource="http://www.w3.org/ns/sosa#Platform"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ABBY_01">
+    <rdf:type rdf:resource="http://ld.neonscience.org/def/Tower"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ABBY_01">
+    <sosa:hosts rdf:resource="http://ld.neonscience.org/towers/sensors/sensor01"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ABBY_01">
+    <sosa:isHostedBy rdf:resource="http://ld.neonscience.org/field-sites/ABBY"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sweetontology.net/propTemperature/Temperature">
+    <rdf:type rdf:resource="http://www.w3.org/ns/sosa#ObservableProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/sensors/sensor01">
+    <rdf:type rdf:resource="http://www.w3.org/ns/sosa#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/sensors/sensor01">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn#System"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/sensors/sensor01">
+    <sosa:observes rdf:resource="http://sweetontology.net/propTemperature/Temperature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ObsCollection01">
+    <rdf:type rdf:resource="http://www.w3.org/ns/ssn/ext#ObservationCollection"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ObsCollection01">
+    <rdf:type rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationObject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ObsCollection01">
+    <sosa:madeBySensor rdf:resource="http://ld.neonscience.org/towers/sensors/sensor01"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ld.neonscience.org/towers/ObsCollection01">
+    <sosa-ext:hasFeatureOfInterest rdf:resource="http://ld.neonscience.org/EnvitonmentalZones/ABBYZone1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://coe1.crc.nd.edu/v1.0/Datastream">
+    <rdf:type rdf:resource="http://schema.geolink.org/1.0/pattern/informationobject#InformationRealization"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://coe1.crc.nd.edu/v1.0/Datastream">
+    <rdf:type rdf:resource="http://www.opengis.net/spec/iot_sensing/1.0/req/datastream"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://coe1.crc.nd.edu/v1.0/Datastream">
+    <geolink-info:hasInformationObject rdf:resource="http://ld.neonscience.org/towers/ObsCollection01"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://ld.neonscience.org/EnvitonmentalZones/ABBYZone1">
     <rdf:type rdf:resource="http://purl.obolibrary.org/obo/ENVO_01000408"/>
