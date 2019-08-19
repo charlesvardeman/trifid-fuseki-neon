@@ -13,7 +13,7 @@
 @prefix envo: <http://purl.obolibrary.org/obo/> .
 @prefix geolink-info: <http://schema.geolink.org/1.0/pattern/informationobject#> .
 @prefix st: <http://www.opengis.net/spec/iot_sensing/1.0/req/> .
-@prefix hydra-core: <http://www.w3.org/ns/hydra/core#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
 
 <http://ld.neonscience.org/field-sites/ABBY> a geoschemas:ResearchSite, geosparql:Feature, plot:Location ;
 schema:Name "Abby Road"@en ;
@@ -78,12 +78,25 @@ sosa:observes  <http://sweetontology.net/propTemperature/Temperature> .
 # Information Object pattern because observation collection can be repackaged as a dataset release or take other forms.
 <http://ld.neonscience.org/towers/ObsCollection01> a sosa-ext:ObservationCollection, geolink-info:InformationObject ;
 sosa:madeBySensor <http://ld.neonscience.org/towers/sensors/sensor01> ;
-sosa-ext:hasFeatureOfInterest <http://ld.neonscience.org/EnvitonmentalZones/ABBYZone1> .
+sosa-ext:hasFeatureOfInterest <http://ld.neonscience.org/EnvitonmentalZones/ABBYZone1> ;
+geolink-info:realizedBy <http://coe1.crc.nd.edu/v1.0/Datastream> .
 
 # Link between SensorThings and SOSA. Use Hydra-core to describe interactions. 
 # Realization of the Obs Collection since the collection can take different forms. For example a Dataset release, a API endpoint, etc.
-<http://coe1.crc.nd.edu/v1.0/Datastream> a geolink-info:InformationRealization, st:datastream ;
-geolink-info:hasInformationObject <http://ld.neonscience.org/towers/ObsCollection01> .
+# For example hydra-box https://github.com/zazuko/hydra-box/blob/master/examples/spaceprobes.api.jsonld
+<http://coe1.crc.nd.edu/v1.0/Datastream> a geolink-info:InformationRealization, st:datastream, hydra:Resource ;
+geolink-info:hasInformationObject <http://ld.neonscience.org/towers/ObsCollection01> ;
+hydra:operation [
+  a hydra:Operation ;
+  hydra:method "GET" ;
+  hydra:expects [
+    a hydra:RequestSpecification ;
+    hydra:content [
+      a hydra:rawContent ;
+      hydra:supportedContentType "application/ld+json"
+    ]
+  ]
+] .
 
 
 <http://ld.neonscience.org/EnvitonmentalZones/ABBYZone1> a envo:ENVO_01000408 ;
